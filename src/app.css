@@ -180,10 +180,16 @@ header .content h6 {
         display: none !important;
     }
 
+    #logo-centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .logo {
         display: inline-block !important;
 
-        height: 2em;
+        height: 11em;
+
         padding-right: var(--content-padding);
     }
 
