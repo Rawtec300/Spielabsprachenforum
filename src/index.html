@@ -9,6 +9,10 @@
   <meta charset="utf-8" />
   <title>Aufgabe: Meine App</title>
   <link rel="shortcut icon" href="favicon.png" />
+        <!-- Klasse App: Steuert die gesamte Anwendung -->
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="app.css" />
+        <style id="page-css"></style>
 
   <!-- Klasse App: Steuert die gesamte Anwendung -->
   <link rel="stylesheet" href="app.css" />
@@ -25,33 +29,35 @@
 
   <!-- Fontello Icon Font (generiert auf fontello.com) -->
   <link rel="stylesheet" href="fontello/css/fontello.css" />
+        <!-- Klassen der einzelnen Unterseiten -->
+        <script src="page-start/page-start.js"></script>
+        <script src="page-not-found/page-not-found.js"></script>
 
   <!-- Stylesheets zur Gestaltung einzelner HTML-Elemente -->
   <link rel="stylesheet" href="elements/button.css" />
   <link rel="stylesheet" href="elements/tab-buttons.css" />
   <link rel="stylesheet" href="elements/form.css" />
 
-  <script>
-    alert("Hallo, JavaScript");
+        <!-- Stylesheets zur Gestaltung einzelner HTML-Elemente -->
+        <link rel="stylesheet" href="elements/button.css" />
+        <link rel="stylesheet" href="elements/tab-buttons.css" />
+        <link rel="stylesheet" href="elements/form.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    window.addEventListener("load", () => {
-      let pages = [{
-        url: "^/$",
-        klass: PageOverview,
-      }, {
-        url: "^/Detail/(.*)$",
-        klass: PageDetail,
-      }, {
-        url: ".*",
-        klass: PageNotFound,
-      }];
+        <script>
+          window.addEventListener("load", () => {
+              let pages = [{
+                  url: "^/$",
+                  klass: PageStart,
+              }, /*{
+                  url: "^/Detail/(.*)$",
+                  klass: PageDetail,
+              },*/ {
+                  url: ".*",
+                  klass: PageNotFound,
+              }];
 
-      let app = new App("Segelfreunde", pages);
-      app.run();
-    });
-  </script>
-</head>
-              let app = new App("Segelfreunde", pages);
+              let app = new App("GamesUP", pages);
               app.run();
           });
         </script>
@@ -60,58 +66,21 @@
         <!-- Kopfbereich der App -->
         <header>
             <nav>
-                <!-- Logo, Zurück-Button und Titel der Seite -->
-                <ul class="menu-left">
-                    <li class="go-back">
-                        <a href="#">
-                            <i class="icon-left-open"></i>
-                            <span class="page-name">Menü</span>
-                        </a>
-                    </li>
-                    <li class="dont-go-back hidden">
-                        <span class="page-name">Name der Seite</span>
-                    </li>
-                    <li class="toggle-menu small-screen-only">
-                        <a href="#">
-                            <i class="icon-menu"></i>
-                        </a>
-                    </li>
-                </ul>
-
-<body>
-  <!-- Kopfbereich der App -->
-  <header>
-    <nav>
-      <!-- Logo, Zurück-Button und Titel der Seite -->
-      <img class="logo" src="logo.png" alt="Logo" />
-
-      <ul class="menu-left">
-        <li class="go-back">
-          <a href="#">
-            <i class="icon-left-open"></i>
-            <span class="page-name">Name der Seite</span>
-          </a>
-        </li>
-        <li class="dont-go-back hidden">
-          <span class="page-name">Name der Seite</span>
-        </li>
-        <li class="toggle-menu small-screen-only">
-          <a href="#">
-            <i class="icon-menu"></i>
-          </a>
-        </li>
-      </ul>
-
-      <!-- Übergreifendes App-Menü -->
-      <ul class="menu-right small">
-        <!-- TODO: Inhalte definieren -->
-      </ul>
-    </nav>
-
-    <div class="content">
-      Inhalt des Kopfbereichs
-    </div>
-  </header>
+                <!-- Top Navigation Menu -->
+                <div class="topnav">
+                  <a href="#/" class="active">Menü</a>
+                  <!-- Navigation links (hidden by default) -->
+                  <div id="myLinks">
+                    <a href="#/News/">News</a>
+                    <a href="#/Contact/">Contact</a>
+                    <a href="#/About/">About</a>
+                  </div>
+                  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                  <a id="toggle-menu" class="icon">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </div>
+            </nav>
 
   <!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
   <main id="app-main-area">
@@ -130,9 +99,6 @@
         <!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
         <main id="app-main-area">
             Inhalt des Hauptbereichs
-            <div id="logo-centered">
-                <img src="LoL.jpg" alt="Bild" height="200" width="100"/>
-            </div>
         </main>
     </body>
 </html>
