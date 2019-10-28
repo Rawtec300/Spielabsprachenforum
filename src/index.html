@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="elements/button.css" />
         <link rel="stylesheet" href="elements/tab-buttons.css" />
         <link rel="stylesheet" href="elements/form.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <script>
           window.addEventListener("load", () => {
@@ -47,28 +48,20 @@
         <!-- Kopfbereich der App -->
         <header>
             <nav>
-                <!-- Logo, Zurück-Button und Titel der Seite -->
-                <ul class="menu-left">
-                    <li class="go-back">
-                        <a href="#">
-                            <i class="icon-left-open"></i>
-                            <span class="page-name">Menü</span>
-                        </a>
-                    </li>
-                    <li class="dont-go-back hidden">
-                        <span class="page-name">Name der Seite</span>
-                    </li>
-                    <li class="toggle-menu small-screen-only">
-                        <a href="#">
-                            <i class="icon-menu"></i>
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Übergreifendes App-Menü -->
-                <ul class="menu-right small" >
-                    <!-- TODO: Inhalte definieren -->
-                </ul>
+                <!-- Top Navigation Menu -->
+                <div class="topnav">
+                  <a href="#/" class="active">Menü</a>
+                  <!-- Navigation links (hidden by default) -->
+                  <div id="myLinks">
+                    <a href="#/News/">News</a>
+                    <a href="#/Contact/">Contact</a>
+                    <a href="#/About/">About</a>
+                  </div>
+                  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                  <a id="toggle-menu" class="icon">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </div>
             </nav>
 
             <div id="logo-centered">
