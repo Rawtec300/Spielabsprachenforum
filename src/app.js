@@ -43,11 +43,22 @@ class App {
      */
     run() {
         // Globale Event Listener registrieren
-        document.querySelector("header nav .go-back a").addEventListener("click", () => window.history.back());
+        let toggleMenuIcon = document.getElementById("toggle-menu");
+        toggleMenuIcon.addEventListener("click", () => this._toggleMenu());
 
         // Single Page Router starten und die erste Seite aufrufen
         window.addEventListener("hashchange", () => this._handleRouting());
         this._handleRouting();
+    }
+
+    _toggleMenu() {
+        let menuLinks = document.getElementById("myLinks");
+
+        if (menuLinks.style.display === "block") {
+            menuLinks.style.display = "none";
+        } else {
+            menuLinks.style.display = "block";
+        }
     }
 
     /**
@@ -120,17 +131,8 @@ class App {
         let isSubPage = options.isSubPage ? options.isSubPage : false;
 
         // Titel setzen
-        document.querySelectorAll(".page-name").forEach(e => e.textContent = title);
+        //document.querySelectorAll(".page-name").forEach(e => e.textContent = title);
         document.title = `${title} – ${this._title}`;
-
-        // Entscheiden, ob der Zurückbutton angezeigt wird, oder nicht
-        if (isSubPage) {
-            document.querySelector("header nav .go-back").classList.remove("hidden");
-            document.querySelector("header nav .dont-go-back").classList.add("hidden");
-        } else {
-            document.querySelector("header nav .go-back").classList.add("hidden");
-            document.querySelector("header nav .dont-go-back").classList.remove("hidden");
-        }
     }
 
     /**
