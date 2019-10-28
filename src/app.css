@@ -228,3 +228,7 @@ main a:visited {
 main a:hover {
     color: red;
 }
+
+.WoW {
+  heigth: auto;
+}
