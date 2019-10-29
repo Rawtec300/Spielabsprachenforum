@@ -5,4 +5,5 @@
 main img {
     width: 20em;
     max-width: 100%;
+    text-align: center;
 }
