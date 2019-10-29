@@ -29,9 +29,6 @@ class PageStart {
         let pageDom = document.createElement("div");
         pageDom.innerHTML = html;
 
-        //let button = pageDom.querySelector("#button");
-        //button.addEventListener("click", () => this._onButtonClicked());
-
         this._app.setPageTitle("Startseite", {isSubPage: true});
         this._app.setPageCss(css);
         this._app.setPageHeader(pageDom.querySelector("header"));
