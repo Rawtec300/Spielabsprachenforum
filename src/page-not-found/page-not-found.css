@@ -3,7 +3,6 @@
  */
 
 main img {
-    width: 20em;
-    max-width: 100%;
-    text-align: center;
+    width: 40em;
+    height: 20em;
 }
