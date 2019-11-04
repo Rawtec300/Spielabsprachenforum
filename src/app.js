@@ -147,16 +147,16 @@ class App {
     }
 
     /**
-    * Austauschen des Inhalts im Kopfbereich der App. Diese Methode muss
-    * von den Page-Klassen aufgerufen werden, um etwas im Kopfbereich der
-    * App anzuzeigen. Hierfür muss ein (ggf. dynamisch nachgeladenes)
-    * HTML-Element mit dem anzuzeigenden Inhalt übergeben werden.
-    *
-    * BEACHTE: Nicht das HTML-Element selbst, sondern seine Kindelemente
-    * werden in der App angezeigt. Somit werden Probleme vermieden, wenn
-    * das nachgeladene Element selbst ein <header> oder <main> ist, für
-    * dass in der app.css bereits globale Layoutoptionen definiert sind.
-    *
+     * Austauschen des Inhalts im Kopfbereich der App. Diese Methode muss
+     * von den Page-Klassen aufgerufen werden, um etwas im Kopfbereich der
+     * App anzuzeigen. Hierfür muss ein (ggf. dynamisch nachgeladenes)
+     * HTML-Element mit dem anzuzeigenden Inhalt übergeben werden.
+     *
+     * BEACHTE: Nicht das HTML-Element selbst, sondern seine Kindelemente
+     * werden in der App angezeigt. Somit werden Probleme vermieden, wenn
+     * das nachgeladene Element selbst ein <header> oder <main> ist, für
+     * dass in der app.css bereits globale Layoutoptionen definiert sind.
+     *
      * @param {HTMLElement} element HTML-Element mit dem anzuzeigenden Inhalt
      */
     setPageHeader(element) {
