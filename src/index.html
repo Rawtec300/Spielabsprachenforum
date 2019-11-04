@@ -17,6 +17,7 @@
         <script src="page-start/page-start.js"></script>
         <script src="page-not-found/page-not-found.js"></script>
 
+        <script src="page-spiel-anmelden/page-spiel-anmelden.js"></script>
         <!-- Fontello Icon Font (generiert auf fontello.com) -->
         <link rel="stylesheet" href="fontello/css/fontello.css" />
 
@@ -31,10 +32,11 @@
               let pages = [{
                   url: "^/$",
                   klass: PageStart,
-              }, /*{
-                  url: "^/Detail/(.*)$",
-                  klass: PageDetail,
-              },*/ {
+              },{
+                url: "^/Spiel_Anmelden/$",
+                klass: SpielAnmelden,
+              },
+              {
                   url: ".*",
                   klass: PageNotFound,
               }];
@@ -50,13 +52,11 @@
             <nav>
                 <!-- Top Navigation Menu -->
                 <div class="topnav">
-                  <a href="#/" class="active">Menü</a>
+                  <a href="#/" class="active"></a>
                   <!-- Navigation links (hidden by default) -->
                   <div id="myLinks">
-                    <a href="#/">Home</a>
-                    <a href="#/Spiel_anmelden/">Spiel anmelden</a>
-                    <a href="#/Contact/">Contact</a>
-                    <a href="#/About/">About</a>
+                    <a href="#/">Home</a><br>
+                    <a href="#/Spiel_Anmelden/">Spiel anmelden</a>
                   </div>
                   <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
                   <a id="toggle-menu" class="icon">
@@ -67,13 +67,10 @@
 
             <div id="logo">
                 <a href="#/"><img class="logo" src="Transparent.png" alt="Logo" /></a>
-
+                <video src="Logo/GamesUp.mp4"type="Logo/GamesUp/mp4" controls width="500" hight="300">
+                    Ihr Browser kann dieses Video nicht wiedergeben.<br/>
+                </video>
             </div>
-            <div id=logo-centered>
-             <video src="Logo/GamesUp.mp4"type="Logo/GamesUp/mp4" controls>
-                 Ihr Browser kann dieses Video nicht wiedergeben.<br/>
-             </video>
-             </div>
 
             <div class="content">
 

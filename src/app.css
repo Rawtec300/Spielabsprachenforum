@@ -67,7 +67,7 @@ body {
 
 /* Allgemeine Darstellung der Menüzeile */
 header {
-    --text-color: black;
+    --text-color: white;
     --icon-color: rgb(0, 90, 115);
 }
 header nav {
@@ -197,44 +197,56 @@ main a:hover {
 * Style Vorgaben für das Hamburger Menü
 */
 
-/* Style the navigation menu */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+.hamburger-icon-container {
+  color:red;
+  height: 1.7em;
+  width: 1.7em;
   position: relative;
+  cursor: pointer;
+  background: currentColor;
+  border:10px solid currentColor;
+  border-radius: 3px;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
-
-/* Style navigation menu links */
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
-
-/* Style the hamburger menu */
-.topnav a.icon {
-  background: black;
-  display: block;
+.hamburger-icon,
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: '';
   position: absolute;
-  right: 0;
-  top: 0;
+  height: 3px;
+  width: 1.7em;
+  background: white;
+  transition: all .2s ease;
 }
 
-/* Add a grey background color on mouse-over */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.hamburger-icon {
+  top: 0.75em
 }
 
-/* Style the active link (or home/logo) */
-.active {
-  background-color: black;
-  color: white;
+.hamburger-icon:before {
+  top: -0.55em
+}
+
+.hamburger-icon:after {
+  top: 0.55em
+}
+
+/* Darstellung wenn das Close-Icon angezeigt werden soll */
+
+.hamburger-active .hamburger-icon-container {
+  color:lime;
+}
+
+.hamburger-active .hamburger-icon {
+  background: transparent;
+  transform: rotate(-135deg)
+}
+
+.hamburger-active .hamburger-icon:before,
+.hamburger-active .hamburger-icon:after {
+  top: 0
+}
+
+.hamburger-active .hamburger-icon:before {
+  transform: rotate(90deg)
 }
