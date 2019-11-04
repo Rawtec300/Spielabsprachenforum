@@ -10,71 +10,80 @@
  * einfach hinzugefügt werden.
  */
 class Database {
-    /**
-     * Konstruktor.
-     */
-    constructor() {
-        this._data = [
-            {
-                id:          1,
-                img:        "boats/1.jpg",
-                name:       "Petrine",
-                typ:        "Ewer",
-                stapellauf: 1909,
-                verbleib:   "In Fahrt",
-                link:       "https://de.wikipedia.org/wiki/Petrine",
-            },{
-                id:          2,
-                img:        "boats/2.jpg",
-                name:       "Falado",
-                typ:        "Brigatine",
-                stapellauf: 1968,
-                verbleib:   "Westlich von Island gesunken",
-                link:       "https://de.wikipedia.org/wiki/Falado_von_Rhodos",
-            },{
-                id:          3,
-                img:        "boats/3.jpg",
-                name:       "Gorch Fock",
-                typ:        "Segelschiff",
-                stapellauf: 1958,
-                verbleib:   "In Fahrt",
-                link:       "https://de.wikipedia.org/wiki/Gorch_Fock_(Schiff,_1958)",
-            },{
-                id:          4,
-                img:        "boats/4.jpg",
-                name:       "Mare Frisium",
-                typ:        "Dreimastmarstoppsegelschoner",
-                stapellauf: 1916,
-                verbleib:   "In Fahrt",
-                link:       "https://de.wikipedia.org/wiki/Mare_Frisium",
-            },{
-                id:          5,
-                img:        "boats/5.jpg",
-                name:       "Preußen",
-                typ:        "Frachtsegler",
-                stapellauf: 1902,
-                verbleib:   "Kollision im Ärmelkanal",
-                link:       "https://de.wikipedia.org/wiki/Preu%C3%9Fen_(Schiff,_1902)",
-            },{
-                id:          6,
-                img:        "boats/6.jpg",
-                name:       "HMS Victory",
-                typ:        "Linienschiff",
-                stapellauf: 1765,
-                verbleib:   "Museum im Portsmouth",
-                link:       "https://de.wikipedia.org/wiki/HMS_Victory",
-            },{
-                id:          7,
-                img:        "boats/7.jpg",
-                name:       "Schulschiff Deutschland",
-                typ:        "Segelschulschiff",
-                stapellauf: 1927,
-                verbleib:   "Kulturdenkmal in Bremen-Vegesack",
-                link:       "https://de.wikipedia.org/wiki/Schulschiff_Deutschland",
-            },
-        ];
-    }
+  /**
+   * Konstruktor.
+   */
+  constructor() {
+    // Diese Informationen müssen aus der Firebase-Konsole ermittelt
+    // werden, indem dort ein neues Projekt mit einer neuen Datenbank
+    // angelegt und diese dann mit einer neuen App verknüpft wird.
+    firebase.initializeApp({
+      apiKey: "AIzaSyDXqHkN6_tmjpXiX5x4opKgAHVeDJyrEtw",
+      authDomain: "gamesup-3168b.firebaseapp.com",
+      databaseURL: "https://gamesup-3168b.firebaseio.com",
+      projectId: "gamesup-3168b",
+      storageBucket: "gamesup-3168b.appspot.com",
+      messagingSenderId: "258827438269",
+      appId: "1:258827438269:web:30fe7b503f90086d954fd4",
+      measurementId: "G-RD4DK5N71Z"
+    });
 
+    // Dieses Objekt dient dem eigentlichen Datenbankzugriff.
+    // Dabei können beliebig viele "Collections" angesprochen werden,
+    // die in etwa den Tabellen einer klassischen Datenbank entsprechen.
+    this._db = firebase.firestore();
+    this._games = this._db.collection("games");
+    this._plattforms = this._db.collection("plattforms");
+    this._dates = this._db.collection("dates");
+  }
+
+  async createGamesData() {
+    let games = await this.selectAllBooks();
+
+    if (games.length < 1) {
+      this.saveItems("games", [{
+        "name": "GTA 5",
+        "id": "gta5",
+        "image": "GTA V.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+        "description": "",
+      }]);
+    }
+  }
+
+  async createPlattformsData() {
+    let games = await this.selectAllBooks();
+
+    if (games.length < 1) {
+      this.saveItems("plattforms", [{
+        "name": "PC",
+        "id": "pc",
+      }]);
+    }
+  }
+
+  async saveItems(collectionName, items) {
+    let collection = this._db.collection(collectionName);
+    let batch = this._db.batch();
+
+    items.forEach(item => {
+      let dbItem = collection.doc(item.id);
+      batch.set(dbItem, item);
+    });
+
+    return batch.commit();
+
+    async deleteItemsById(collectionName, ids) {
+        let collection = this._db.collection(collectionName);
+        let batch = this._db.batch();
+
+        items.forEach(item => {
+            let dbItem = collection.doc(item.id);
+            batch.delete(dbBook);
+        });
+
+        return batch.commit();
+    }
     /**
      * Diese Methode sucht einen Datensazt anhand seiner ID in der Datenbank
      * und liefert den ersten, gefundenen Treffer zurück.
@@ -83,8 +92,8 @@ class Database {
      * @return {Object} Gefundener Datensatz
      */
     getRecordById(id) {
-        id = parseInt(id);
-        return this._data.find(r => r.id === id);
+      id = parseInt(id);
+      return this._data.find(r => r.id === id);
     }
 
     /**
@@ -92,6 +101,6 @@ class Database {
      * @return {Array} Liste aller Datensätze
      */
     getAllRecords() {
-        return this._data;
+      return this._data;
     }
-}
+  }
