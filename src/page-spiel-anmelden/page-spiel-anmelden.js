@@ -8,21 +8,26 @@ class SpielAnmelden {
         this.database = new Database();
     }
 
-    _handleRouting(){
-        let pageUrl = location.hash.slice(1);
-        
-        pageUrl = "/Spiel_anmelden";
+    async show(matches) {
+        // Anzuzeigenden Seiteninhalt nachladen
+        let html = await fetch("page-start/page-spiel_anmelden.html");
+        let css = await fetch("page-start/page-spiel_anmelden.css");
 
-
-        let matches = null;
-        let page = this._pages.find(p => matches = pageUrl.match(p.url));
-
-        if (!page) {
-            console.error(`Keine Seite zur URL ${pageUrl} gefunden!`);
+        if (html.ok && css.ok) {
+            html = await html.text();
+            css = await css.text();
+        } else {
+            console.error("Fehler beim Laden des HTML/CSS-Inhalts");
             return;
         }
 
-        this._currentPageObject = new page.klass(this);
-        this._currentPageObject.show(matches);
+        // Seite zur Anzeige bringen
+        let pageDom = document.createElement("div");
+        pageDom.innerHTML = html;
+
+        this._app.setPageTitle("Spiel Anmelden", {isSubPage: true});
+        this._app.setPageCss(css);
+        this._app.setPageHeader(pageDom.querySelector("header"));
+        this._app.setPageContent(pageDom.querySelector("main"));
     }
 }
