@@ -1,10 +1,14 @@
 <<!DOCTYPE html>
-<html>
+    <html>
+
     <head>
         <meta charset="utf-8">
         <title>anmelden Spiel</title>
 
+        
+
     </head>
+
     <body>
         <!-- Kopfbereich -->
         <header>
@@ -13,14 +17,32 @@
         <!-- Hauptbereich -->
         <main>
             <form>
-                Spielplattform:
-                <input type="radio" name="Spielplattform" value="
-                PC">PC
-                <input type="radio" name="Spielplattform" value="
-                xBox">xBox
-                <input type="radio" name="Spielplattform" value="
-                PS4">PS4
+                <label> Konsole:
+                    <select name="Konsole">
+                        <option>PC</option>
+                        <option>PS4</option>
+                        <option>xBox</option>
+                    </select>
+                </label>
+                <div>
+                    Spiel:<br>
+                    <input type="text" name="Spiel" disabled>
+                </div>
+                <div>
+                    Am:<br>
+                    <input type="date" name="Date">
+                </div>
+                <div>
+                    Um:<br>
+                    <input type="time" name="Uhrzeit">
+                </div>
+                <div>
+                    <form action="#/" method="get">
+                        <input type="submit" value="Absenden" name="Submit" id="frm1_submit" />
+                    </form>
+                </div>
             </form>
         </main>
     </body>
-</html>
+
+    </html>
