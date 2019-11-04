@@ -1,17 +1,13 @@
 "use strict";
 class SpielAnmelden {
-    constructor(title, pages) {
-        this._title = title;
-        this._pages = pages;
-        this._currentPageObject = null;
-
-        this.database = new Database();
+    constructor(app) {
+        this._app = app;
     }
 
     async show(matches) {
         // Anzuzeigenden Seiteninhalt nachladen
-        let html = await fetch("page-start/page-spiel_anmelden.html");
-        let css = await fetch("page-start/page-spiel_anmelden.css");
+        let html = await fetch("page-spiel-anmelden/page-spiel-anmelden.html");
+        let css = await fetch("page-spiel-anmelden/page-spiel-anmelden.css");
 
         if (html.ok && css.ok) {
             html = await html.text();
