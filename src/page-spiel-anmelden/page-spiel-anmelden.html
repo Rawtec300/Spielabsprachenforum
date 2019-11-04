@@ -13,7 +13,7 @@
         <!-- Hauptbereich -->
         <main>
             <form>
-                <label> Plattform:
+                <label> Konsole:
                 <select name = "Konsole">
                     <option>PC</option>
                     <option>PS4</option>
@@ -21,10 +21,20 @@
                 </select>
                 </label>
                 <div>
-                    Spiel:
-                    <input type="text" name="Spiel">
+                    Spiel:<br>
+                    <input type="text" name="Spiel" disabled>
                 </div>
-
+                <div>
+                    Am:<br>
+                    <input type="date" name= "Date">
+                </div>
+                <div>
+                    Um:<br>
+                    <input type="time" name="Uhrzeit">
+                </div>
+                <div>
+                    <input type="submit" name="Submit" >
+                </div>
             </form>
         </main>
     </body>
