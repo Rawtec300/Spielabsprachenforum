@@ -42,11 +42,110 @@ class Database {
 
     if (games.length < 1) {
       this.saveItems("games", [{
+        "name": "League of Legends",
+        "id": "lol",
+        "image": "LoL.jpg",
+        "plattform": "pc",
+      }, {
+        "name": "World of Warcraft",
+        "id": "wow",
+        "image": "WoW.jpg",
+        "plattform": "pc",
+      }, {
+        "name": "Battlefield V",
+        "id": "bfv",
+        "image": "Battlefield.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Assassin´s Creed",
+        "id": "ac",
+        "image": "A.Creed.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Borderlands 3",
+        "id": "borderlands3",
+        "image": "Borderlands.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Call of Duty Modern Warfare",
+        "id": "codmw",
+        "image": "CallOfDuty.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Counter Strike : Global Offensive",
+        "id": "csgo",
+        "image": "Counter-Strike.jpg",
+        "plattform": "pc",
+      }, {
+        "name": "Dota 2",
+        "id": "dota2",
+        "image": "Dota2.jpg",
+        "plattform": "pc",
+      }, {
+        "name": "Fallout 76",
+        "id": "fallout76",
+        "image": "Fallout76.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "FIFA20",
+        "id": "fifa",
+        "image": "FIFA20.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Fortnite",
+        "id": "fortnite",
+        "image": "Fortnite.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
         "name": "GTA 5",
         "id": "gta5",
         "image": "GTA V.jpg",
         "plattform": ["pc", "ps4", "xbox"],
-        "description": "",
+      }, {
+        "name": "Minecraft ",
+        "id": "minecraft",
+        "image": "Minecraft.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Monster Hunter World",
+        "id": "monsterHunter",
+        "image": "Monster_Hunter_World.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Overwatch",
+        "id": "overwatch",
+        "image": "Overwatch.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "PUBG",
+        "id": "pubg",
+        "image": "P.BATTLEGROUNDS.jpg",
+        "plattform": "pc",
+      }, {
+        "name": "Rainbow Six Siege",
+        "id": "r6",
+        "image": "Rainbow.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Rocket League",
+        "id": "rocketLeague",
+        "image": "Rocket_League.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
+      }, {
+        "name": "Sea of Thieves",
+        "id": "seaOfThiefes",
+        "image": "SeaOfThiefes.jpg",
+        "plattform": ["pc", "xbox"],
+      }, {
+        "name": "Secret Neighbor",
+        "id": "secretNeighbor",
+        "image": "Secret_Neighbor.jpg",
+        "plattform": "pc",
+      }, {
+        "name": "ARK Survival Evolved",
+        "id": "ark",
+        "image": "ARK.jpg",
+        "plattform": ["pc", "ps4", "xbox"],
       }]);
     }
   }
@@ -58,9 +157,34 @@ class Database {
       this.saveItems("plattforms", [{
         "name": "PC",
         "id": "pc",
+      }, {
+        "name": "PS4",
+        "id": "ps4",
+      }, {
+        "name": "xBox",
+        "id": "xbox",
       }]);
     }
   }
+
+  async selectAllBItems(collectionName) {
+  let collection = this._db.collection(collectionName);
+      let result = await collection.orderBy("name").get();
+      let items = [];
+
+      result.forEach(entry => {
+          let item = entry.data();
+          items.push(item);
+      });
+
+      return items;
+  }
+
+  async selectItemById(collectionName, id) {
+      let collection = this._db.collection(collectionName);
+      let result = await collection.doc(id).get();
+      return result.data();
+    }
 
   async saveItems(collectionName, items) {
     let collection = this._db.collection(collectionName);
@@ -72,6 +196,7 @@ class Database {
     });
 
     return batch.commit();
+  }
 
     async deleteItemsById(collectionName, ids) {
         let collection = this._db.collection(collectionName);
@@ -83,24 +208,5 @@ class Database {
         });
 
         return batch.commit();
-    }
-    /**
-     * Diese Methode sucht einen Datensazt anhand seiner ID in der Datenbank
-     * und liefert den ersten, gefundenen Treffer zurück.
-     *
-     * @param  {Number} id Datensatz-ID
-     * @return {Object} Gefundener Datensatz
-     */
-    getRecordById(id) {
-      id = parseInt(id);
-      return this._data.find(r => r.id === id);
-    }
-
-    /**
-     * Diese Methode gibt eine Liste mit allen Datensätzen zurück.
-     * @return {Array} Liste aller Datensätze
-     */
-    getAllRecords() {
-      return this._data;
     }
   }
