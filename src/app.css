@@ -67,7 +67,7 @@ body {
 
 /* Allgemeine Darstellung der Menüzeile */
 header {
-    --text-color: white;
+    --text-color: black;
     --icon-color: rgb(0, 90, 115);
 }
 header nav {
@@ -165,8 +165,8 @@ header .content h6 {
     .logo {
         display: inline-block !important;
 
-        height: 1em;
-        height: 4.5em;
+        height: 2em;
+        height: 9em;
 
         padding-right: var(--content-padding);
     }
@@ -220,10 +220,9 @@ main a:hover {
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background: grey;
+  background: black;
   display: block;
   position: absolute;
-  left: 0;
   right: 0;
   top: 0;
 }
