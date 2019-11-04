@@ -1,10 +1,14 @@
 <<!DOCTYPE html>
-<html>
+    <html>
+
     <head>
         <meta charset="utf-8">
         <title>anmelden Spiel</title>
 
+        
+
     </head>
+
     <body>
         <!-- Kopfbereich -->
         <header>
@@ -14,11 +18,11 @@
         <main>
             <form>
                 <label> Konsole:
-                <select name = "Konsole">
-                    <option>PC</option>
-                    <option>PS4</option>
-                    <option>xBox</option>
-                </select>
+                    <select name="Konsole">
+                        <option>PC</option>
+                        <option>PS4</option>
+                        <option>xBox</option>
+                    </select>
                 </label>
                 <div>
                     Spiel:<br>
@@ -26,16 +30,19 @@
                 </div>
                 <div>
                     Am:<br>
-                    <input type="date" name= "Date">
+                    <input type="date" name="Date">
                 </div>
                 <div>
                     Um:<br>
                     <input type="time" name="Uhrzeit">
                 </div>
                 <div>
-                    <input type="submit" name="Submit" >
+                    <form action="#/" method="get">
+                        <input type="submit" value="Absenden" name="Submit" id="frm1_submit" />
+                    </form>
                 </div>
             </form>
         </main>
     </body>
-</html>
+
+    </html>
