@@ -1,5 +1,5 @@
 "use strict";
-class SpielAnmelden {
+class TopTen {
     constructor(app) {
         this._app = app;
     }

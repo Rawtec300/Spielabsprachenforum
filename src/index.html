@@ -16,7 +16,7 @@
         <!-- Klassen der einzelnen Unterseiten -->
         <script src="page-start/page-start.js"></script>
         <script src="page-not-found/page-not-found.js"></script>
-
+        <script src="page-unsere-top-ten/page-unsere-top-ten.js"></script>
         <script src="page-spiel-anmelden/page-spiel-anmelden.js"></script>
         <!-- Fontello Icon Font (generiert auf fontello.com) -->
         <link rel="stylesheet" href="fontello/css/fontello.css" />
@@ -35,7 +35,10 @@
               },{
                 url: "^/Spiel_Anmelden/$",
                 klass: SpielAnmelden,
-              },
+            },{
+                url: "^/Top_Ten/$",
+                klass: TopTen
+            },
               {
                   url: ".*",
                   klass: PageNotFound,
