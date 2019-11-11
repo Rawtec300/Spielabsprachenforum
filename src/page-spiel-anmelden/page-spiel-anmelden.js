@@ -26,8 +26,4 @@ class SpielAnmelden {
         this._app.setPageHeader(pageDom.querySelector("header"));
         this._app.setPageContent(pageDom.querySelector("main"));
     }
-funktion addDatum(){
-    var spielText = document.getElementById("Spiel");
-    window.alert("läuf diggi");
-  }
 }
