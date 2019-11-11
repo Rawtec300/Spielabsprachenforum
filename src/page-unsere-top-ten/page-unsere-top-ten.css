@@ -1,8 +1,8 @@
 /**
  * Stylesheet zur Klasse Page-unsere-top-ten: Top-Ten-Seite der APp
  */
-header h1 {
-    color: black;
-    text-align: center;
 
+h1 {
+color: red;
+text-align: center;
 }
