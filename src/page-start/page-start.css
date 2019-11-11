@@ -4,6 +4,11 @@
 
 section {
     display: flex;
+
+}
+.img {
+    justify-content: center;
+        align-items: center;
 }
 section main {
     display: flex;
@@ -13,7 +18,10 @@ section main {
 section img {
     display: inline-block;
     max-width: calc(50%-2em);
-    min-height:380px ;
-    min-width: 285px;
+
 }
-height="380" width="285" /
+main img {
+
+    height: 15em;
+    width: 10em;
+}
