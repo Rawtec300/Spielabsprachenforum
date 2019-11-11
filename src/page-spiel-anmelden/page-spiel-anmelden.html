@@ -1,48 +1,89 @@
 <<!DOCTYPE html>
-    <html>
+  <html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>anmelden Spiel</title>
+  <head>
+    <meta charset="utf-8">
+    <title>anmelden Spiel</title>
+    <script>
+      window.addEventListener("load", async () => {
+        let addDate = document.getElementById("Absenden");
 
+        let database = new Database();
+        await database.createGamesData();
 
+        async function saveChanges() {
+          try {
+            await database.saveItems(dates,table.getData());
 
-    </head>
+            displayMessage("success", "Änderungen wurden gesichert.");
+            reloadData();
+          } catch (error) {
+            displayMessage("danger", `<strong>Fehler beim Sichern:</strong> ${error}`);
+          }
+        }
 
-    <body>
-        <!-- Kopfbereich -->
-        <header>
-        </header>
+        function displayMessage(type, message) {
+          // Vgl. https://getbootstrap.com/docs/4.3/components/alerts/
+          // type = primary, secondary, success, danger, warning, info, light, dark
+          console.log(type, message);
 
-        <!-- Hauptbereich -->
-        <main>
-            <form>
-                <label> Konsole:
-                    <select name="Konsole">
-                        <option>PC</option>
-                        <option>PS4</option>
-                        <option>xBox</option>
-                    </select>
-                </label>
-                <div>
-                    Spiel:<br>
-                    <input type="text" name="Spiel">
-                </div>
-                <div>
-                    Am:<br>
-                    <input type="date" name="Date">
-                </div>
-                <div>
-                    Um:<br>
-                    <input type="time" name="Uhrzeit">
-                </div>
-                <div>
-                    <form action="#/" method="get">
-                        <input type="submit" value="Absenden" name="Submit" id="frm1_submit" />
-                    </form>
-                </div>
-            </form>
-        </main>
-    </body>
+          let divElement = document.createElement("div");
+          divElement.className = `alert alert-${type} alert-dismissible fade show`;
+          divElement.setAttribute("role", "alert");
 
-    </html>
+          divElement.innerHTML = `
+                    ${message}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                `;
+
+          document.getElementById("alerts").appendChild(divElement);
+          setTimeout(() => $(divElement).alert("close"), 5000);
+        }
+
+        buttonSaveChanges.addEventListener("click", saveChanges);
+
+        reloadData();
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <!-- Kopfbereich -->
+    <header>
+    </header>
+
+    <!-- Hauptbereich -->
+    <main>
+      <form>
+        <label> Konsole:
+          <select name="Konsole">
+            <option>PC</option>
+            <option>PS4</option>
+            <option>xBox</option>
+          </select>
+        </label>
+        <div>
+          Spiel:<br>
+          <input type="text" name="Spiel">
+        </div>
+        <div>
+          Am:<br>
+          <input type="date" name="Date">
+        </div>
+        <div>
+          Um:<br>
+          <input type="time" name="Uhrzeit">
+        </div>
+        <div>
+          <form action="#/" method="get">
+            <input type="submit" value="Absenden" name="Submit" id="frm1_submit" />
+          </form>
+        </div>
+      </form>
+    </main>
+  </body>
+
+  </html>
