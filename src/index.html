@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Aufgabe: </title>
-        <link rel="shortcut icon" href="favicon.png" />
 
 <head>
-  <meta charset="utf-8" />
-  <title>Aufgabe: Meine App</title>
-  <link rel="shortcut icon" href="favicon.png" />
-        <!-- Klasse App: Steuert die gesamte Anwendung -->
-        <script src="app.js"></script>
-        <link rel="stylesheet" href="app.css" />
-        <style id="page-css"></style>
+    <meta charset="utf-8" />
+    <title>Aufgabe: </title>
+    <link rel="shortcut icon" href="favicon.png" />
 
-  <!-- Klasse App: Steuert die gesamte Anwendung -->
-  <link rel="stylesheet" href="app.css" />
+    <!-- Klasse App: Steuert die gesamte Anwendung -->
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css" />
+    <style id="page-css"></style>
 
-  <!-- Klasse Database: Verwaltet die Daten der Anwendung -->
-  <script src="database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    <!-- Klasse Database: Verwaltet die Daten der Anwendung -->
+    <script src="database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    
+    <!-- Klassen der einzelnen Unterseiten -->
+    <script src="page-start/page-start.js"></script>
+    <script src="page-not-found/page-not-found.js"></script>
+    <script src="page-unsere-top-ten/page-unsere-top-ten.js"></script>
+    <script src="page-spiel-anmelden/page-spiel-anmelden.js"></script>
+    <!-- Fontello Icon Font (generiert auf fontello.com) -->
+    <link rel="stylesheet" href="fontello/css/fontello.css" />
 
-  <!-- TODO: Klasse App ausprogrammieren -->
-  <!-- TODO: Klasse PageNotFound anlegen und ausprogrammieren -->
-  <!-- TODO: Klasse PageOverview zu Ende programmieren -->
-  <!-- TODO: Klasse PageDetail zu Ende programmieren -->
+    <!-- Stylesheets zur Gestaltung einzelner HTML-Elemente -->
+    <link rel="stylesheet" href="elements/button.css" />
+    <link rel="stylesheet" href="elements/tab-buttons.css" />
+    <link rel="stylesheet" href="elements/form.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- Fontello Icon Font (generiert auf fontello.com) -->
-  <link rel="stylesheet" href="fontello/css/fontello.css" />
-        <!-- Klassen der einzelnen Unterseiten -->
-        <script src="page-start/page-start.js"></script>
-        <script src="page-not-found/page-not-found.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            let pages = [{
+                    url: "^/$",
+                    klass: PageStart,
+                }, {
+                    url: "^/Spiel_Anmelden/$",
+                    klass: SpielAnmelden,
+                }, {
+                    url: "^/Top_Ten/$",
+                    klass: TopTen
+                },
+                {
+                    url: ".*",
+                    klass: PageNotFound,
+                }
+            ];
 
-  <!-- Stylesheets zur Gestaltung einzelner HTML-Elemente -->
-        <script src="page-spiel-anmelden/page-spiel-anmelden.js"></script>
-        <!-- Fontello Icon Font (generiert auf fontello.com) -->
-        <link rel="stylesheet" href="fontello/css/fontello.css" />
+            let app = new App("GamesUP", pages);
+            app.run();
+        });
+    </script>
+</head>
 
-        <!-- Stylesheets zur Gestaltung einzelner HTML-Elemente -->
-        <link rel="stylesheet" href="elements/button.css" />
-        <link rel="stylesheet" href="elements/tab-buttons.css" />
-        <link rel="stylesheet" href="elements/form.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <script>
-          window.addEventListener("load", () => {
-              let pages = [{
-                  url: "^/$",
-                  klass: PageStart,
-              },{
-                url: "^/Spiel_Anmelden/$",
-                klass: SpielAnmelden,
-              },
-              {
-                  url: ".*",
-                  klass: PageNotFound,
-              }];
-
-              let app = new App("GamesUP", pages);
-              app.run();
-          });
-        </script>
-    </head>
-    <body>
-        <!-- Kopfbereich der App -->
-        <header>
-            <nav>
-                <!-- Top Navigation Menu -->
-                <div class="topnav">
-                  <a href="#/" class="active"></a>
-                  <!-- Navigation links (hidden by default) -->
-                  <div id="myLinks">
+<body>
+    <!-- Kopfbereich der App -->
+    <header>
+        <nav>
+            <!-- Top Navigation Menu -->
+            <div class="topnav">
+                <a href="#/" class="active"></a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
                     <a href="#/">Home</a><br>
-                    <a href="#/Spiel_Anmelden/">Spiel anmelden</a>
-                  </div>
-                  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                  <a id="toggle-menu" class="icon">
-                    <i class="fa fa-bars"></i>
-                  </a>
+                    <a href="#/Spiel_Anmelden/">Spiel anmelden</a><br>
+                    <a href="#/Top_Ten/">Top Ten</a>
                 </div>
-            </nav>
-
-            <div id="logo">
-                <a href="#/"><img class="logo" src="Transparent.png" alt="Logo" /></a>
-                <video src="Logo/GamesUp.mp4"type="Logo/GamesUp/mp4" controls width="500" hight="300">
-                    Ihr Browser kann dieses Video nicht wiedergeben.<br/>
-                </video>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a id="toggle-menu" class="icon">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
+        </nav>
 
-            <div class="content">
+        <div id="logo">
+            <a href="#/"><img class="logo" src="Transparent.png" alt="Logo" /></a>
+            <video src="Logo/GamesUp.mp4" type="Logo/GamesUp/mp4" controls width="500" hight="300" id="_video" autoplay=true style="margin-left: 550px;">
+                Ihr Browser kann dieses Video nicht wiedergeben.<br />
+            </video>
+        </div>
 
-            </div>
+        <div class="content">
 
-        </header>
+        </div>
 
-        <!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
-        <main id="app-main-area">
+    </header>
 
-        </main>
-    </body>
+    <!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
+    <main id="app-main-area">
+
+    </main>
+</body>
+
 </html>
