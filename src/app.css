@@ -254,6 +254,9 @@ main a:hover {
 /*Footer Information*/
 footer{
     color: white;
+    font-size: 80%;
+    line-height: 50%;
+    text-align: center;
 }
 footer p#_überschrift{
     text-align: center;
