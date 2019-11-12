@@ -28,21 +28,27 @@ display: inline-block;
 figure {
 
   margin: 0;
-
-
-
-
+position: relative;
 }
 
 figcaption {
-  padding: 5px;
-  text-align: center;
+    position: absolute;
+    bottom: 500;
+    text-align: center;
+    width: 10em;
+    background: lightgrey;
+    color: black;
+
+
 
 }
-
+figure img {
+  display: block;
+}
 
 figure.einzel {
   display: inline-block;
-  padding: 2px;
+  padding right: 0px;
+  padding-bottom: 2em;
   width: 10em;
 }
