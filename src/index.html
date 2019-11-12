@@ -35,22 +35,21 @@
     <script>
         window.addEventListener("load", () => {
             let pages = [{
-                    url: "^/$",
-                    klass: PageStart,
-                }, {
-                    url: "^/Spiel_Anmelden/$",
-                    klass: SpielAnmelden,
-                }, {
-                    url: "^/Top_Ten/$",
-                    klass: TopTen,
-                },{
-                    url: "/Wer_spielt_was/$",
-                    klass: WerSpieltWas,
-                },{
-                    url: ".*",
-                    klass: PageNotFound,
-                }
-            ];
+                url: "^/$",
+                klass: PageStart,
+            }, {
+                url: "^/Spiel_Anmelden/$",
+                klass: SpielAnmelden,
+            }, {
+                url: "^/Top_Ten/$",
+                klass: TopTen,
+            }, {
+                url: "/Wer_spielt_was/$",
+                klass: WerSpieltWas,
+            }, {
+                url: ".*",
+                klass: PageNotFound,
+            }];
 
             let app = new App("GamesUP", pages);
             app.run();
@@ -68,7 +67,7 @@
 
 
         <div class="logo">
-            <a href="#/"><img src="Logo/Logo.png" align="top" alt="Logo" hight= 400px width= 200px></a>
+            <a href="#/"><img src="Logo/Logo.png" align="top" alt="Logo" hight=400px width=200px></a>
             <video src="Logo/GamesUp.mp4" type="Logo/GamesUp/mp4" controls width="500" hight="500" id="_video" autoplay=true style="margin-left: 650px;">
                 Ihr Browser kann dieses Video nicht wiedergeben.
             </video>
@@ -110,6 +109,7 @@
     <p>©Copyright 2019 Lena Paul, Pascal Hartmann, Fabian Fischer und Noah Colby</p>
     <p>Alle Bilder und Marken bleiben Eigentum ihrer Urheber.</p>
     <p>Stand: 17. November 2019  </p>
+    <p>Kontakt: noah.colby@yahoo.de</p>
 </footer>
 
 </html>
