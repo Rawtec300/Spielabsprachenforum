@@ -128,7 +128,7 @@ header .content h6 {
 }
 
 header .content h1 {
-    color: rgb(37, 88, 148);
+    color: black;
     text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
     font-size: 150%;
 }
@@ -252,4 +252,7 @@ main a:hover {
 /*Footer Information*/
 footer{
     color: white;
+}
+footer p#_überschrift{
+    text-align: center;
 }
