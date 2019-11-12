@@ -25,3 +25,24 @@ display: inline-block;
     height: 15em;
     width: 10em;
 }
+figure {
+
+  margin: 0;
+
+
+
+
+}
+
+figcaption {
+  padding: 5px;
+  text-align: center;
+
+}
+
+
+figure.einzel {
+  display: inline-block;
+  padding: 2px;
+  width: 10em;
+}
