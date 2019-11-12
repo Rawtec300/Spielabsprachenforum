@@ -6,7 +6,8 @@
     <title>anmelden Spiel</title>
     <script>
       window.addEventListener("load", async () => {
-        let addDate = document.getElementById("Absenden");
+        let buttonAddDate = document.getElementById("Absenden");
+        var gameName = document.getElementById("");
 
         let database = new Database();
         await database.createGamesData();
@@ -42,7 +43,7 @@
           setTimeout(() => $(divElement).alert("close"), 5000);
         }
 
-        buttonSaveChanges.addEventListener("click", saveChanges);
+        buttonAddDate.addEventListener("click", addData());
 
         reloadData();
       });
