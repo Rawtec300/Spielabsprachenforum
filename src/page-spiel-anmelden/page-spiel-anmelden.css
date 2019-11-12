@@ -7,7 +7,7 @@ label{
 
 }
 select{
-    font-size: 50%;
+    font-size: 70%;
 
 }
 input{
@@ -17,10 +17,16 @@ input{
 
 main {
     text-align: center;
-    font-size: 120%;
+    font-size: 110%;
 
+}
+form input id= frm1_submit{
+    font-size: 120%;
 }
 div {
     margin:0;
     padding:0;
+}
+h1 {
+    font-size: 80%;
 }
