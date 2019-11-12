@@ -249,3 +249,11 @@ main a:hover {
 .hamburger-active .hamburger-icon:before {
   transform: rotate(90deg)
 }
+
+/*Footer Information*/
+footer{
+    color: white;
+}
+footer p#_überschrift{
+    text-align: center;
+}
