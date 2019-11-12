@@ -68,10 +68,12 @@ body {
 header {
     --text-color: white;
     --icon-color: rgb(0, 90, 115);
+
 }
 header nav {
-    padding: var(--content-padding);
+
     color: var(--text-color);
+    border: 1px solid gainsboro;
 }
 
 header nav i {
@@ -82,12 +84,10 @@ header nav .page-name {
     font-weight: bold;
 }
 
-header nav .logo {
-    display: none;
-}
+
 
 /* Link-Farben */
-header nav a,
+
 header nav a:visited {
     color: var(--text-color);
     text-decoration: none;
@@ -98,7 +98,6 @@ header nav a:hover {
     color: var(--icon-color);
 }
 
-header nav a i,
 header nav a:visited i {
     color: var(--icon-color);
 }
@@ -110,8 +109,8 @@ header nav a:hover i {
 /* Kopfinhalt der Seite */
 header .content {
 
-    padding-top: 2px;
-    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 15px;
 
     background: grey;
     border: 0px solid lightgrey;
@@ -176,6 +175,7 @@ header .content h6 {
  * HAUPTBEREICH
  */
 main {
+
     padding: var(--content-padding);
     background: rgba(240,240,240, 0.6);
 
