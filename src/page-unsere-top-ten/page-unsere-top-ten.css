@@ -4,3 +4,29 @@
 h1{
     color: black;
     text-align: center;
+    font-size: 35px;
+
+}
+section {
+        display: flex;
+
+    }
+    .imgage {
+        justify-content: center;
+            align-items: center;
+    }
+    section main {
+        display: flex;
+        image-orientation: center;
+    }
+
+    section img {
+        display: inline-block;
+        max-width: calc(50%-2em);
+
+    }
+    main img {
+    display: inline-block;
+        height: 15em;
+        width: 10em;
+    }

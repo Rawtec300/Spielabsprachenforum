@@ -1,0 +1,28 @@
+/**
+ * Stylesheet zur Klasse Page-start: Startseite der App
+ */
+
+
+section {
+    display: flex;
+
+}
+.img {
+    justify-content: center;
+        align-items: center;
+}
+section main {
+    display: flex;
+    image-orientation: center;
+}
+
+section img {
+    display: inline-block;
+    max-width: calc(50%-2em);
+
+}
+main img {
+display: inline-block;
+    height: 15em;
+    width: 10em;
+}
