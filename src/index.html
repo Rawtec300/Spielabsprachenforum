@@ -19,6 +19,7 @@
 
     <!-- Klassen der einzelnen Unterseiten -->
     <script src="page-start/page-start.js"></script>
+    <script src="page-wer-spielt-was/page-wer-spielt-was.js"></script>
     <script src="page-not-found/page-not-found.js"></script>
     <script src="page-unsere-top-ten/page-unsere-top-ten.js"></script>
     <script src="page-spiel-anmelden/page-spiel-anmelden.js"></script>
@@ -41,9 +42,11 @@
                     klass: SpielAnmelden,
                 }, {
                     url: "^/Top_Ten/$",
-                    klass: TopTen
-                },
-                {
+                    klass: TopTen,
+                },{
+                    url: "/Wer_spielt_was/$",
+                    klass: WerSpieltWas,
+                },{
                     url: ".*",
                     klass: PageNotFound,
                 }
@@ -81,7 +84,7 @@
                     <a href="#/">Home</a><br>
                     <a href="#/Spiel_Anmelden/">Spiel anmelden</a><br>
                     <a href="#/Top_Ten/">Top 10</a><br>
-                    <a href="#/Wer spielt was/">Wer spielt was</a>
+                    <a href="#/Wer_spielt_was/">Wer spielt was</a>
                 </div>
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
                 <a id="toggle-menu" class="icon">
