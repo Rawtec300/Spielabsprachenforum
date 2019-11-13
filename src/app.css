@@ -71,9 +71,9 @@ header {
 
 }
 header nav {
-
+    padding-left: 1em;
     color: var(--text-color);
-    border: 1px solid gainsboro;
+
 }
 
 header nav i {
@@ -167,6 +167,7 @@ header .content h6 {
         display: inline-block !important;
         height: 2em;
         height: 8em;
+
 
     }
 }
