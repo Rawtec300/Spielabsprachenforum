@@ -1,57 +1,42 @@
-<<!DOCTYPE html>
-    <html>
+<!-- Kopfbereich -->
+<header>
+    <h1>Bitte befüllen sie alle Felder</h1>
+</header>
 
-    <head>
-        <meta charset="utf-8">
-        <title>anmelden Spiel</title>
+<!-- Hauptbereich -->
+<main>
 
+    <form action="#/Wer_spielt_was/">
+        <div>
+            <label> Konsole:
+                <select name="Konsole">
+                    <option>PC</option>
+                    <option>PS4</option>
+                    <option>xBox</option>
+                </select>
+            </label>
 
-
-    </head>
-
-    <body>
-        <!-- Kopfbereich -->
-        <header>
-            <h1>Bitte befüllen sie alle Felder</h1>
-        </header>
-
-        <!-- Hauptbereich -->
-        <main>
-
-            <form action="#/Wer_spielt_was/">
-                <div>
-                    <label> Konsole:
-                        <select name="Konsole">
-                            <option>PC</option>
-                            <option>PS4</option>
-                            <option>xBox</option>
-                        </select>
-                    </label>
-
-                </div><br>
-                <div>
-                    Spiel:<br>
-                    <input type="text" name="Spiel">
-                </div>
-                <div>
-                    Username:<br>
-                    <input type="text" name="Username">
-                </div>
-                <div>
-                    Am:<br>
-                    <input type="date" name="Date">
-                </div>
-                <div>
-                    Um:<br>
-                    <input type="time" name="Uhrzeit">
-                </div><br>
-                <div>
-                    <form action="#/" method="get">
-                        <input type="submit" value="Absenden" name="Submit" id="frm1_submit"/>
-                    </form>
-                </div>
+        </div><br>
+        <div>
+            Spiel:<br>
+            <input type="text" name="Spiel">
+        </div>
+        <div>
+            Username:<br>
+            <input type="text" name="Username">
+        </div>
+        <div>
+            Am:<br>
+            <input type="date" name="Date">
+        </div>
+        <div>
+            Um:<br>
+            <input type="time" name="Uhrzeit">
+        </div><br>
+        <div>
+            <form action="#/" method="get">
+                <input type="submit" value="Absenden" name="Submit" id="frm1_submit" />
             </form>
-        </main>
-    </body>
-
-    </html>
+        </div>
+    </form>
+</main>
