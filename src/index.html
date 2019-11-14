@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Aufgabe: </title>
-    <link rel="shortcut icon" href="Logo/Logo.png" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="Logo/Transparent.ico">
+    <title>GamesUp</title>
+
+
 
 
     <!-- Klasse App: Steuert die gesamte Anwendung -->
@@ -36,24 +38,21 @@
     <script>
         window.addEventListener("load", () => {
             let pages = [{
-                    url: "^/$",
-                    klass: PageStart,
-                }, {
-                    url: "^/Spiel_Anmelden/$",
-                    klass: SpielAnmelden,
-                }, {
-                    url: "^/Top_Ten/$",
-                    klass: TopTen,
-                },
-                {
-                    url: "^/Wer_spielt_was/$",
-                    klass: WerSpieltWas,
-                },
-                {
-                    url: ".*",
-                    klass: PageNotFound,
-                }
-            ];
+                url: "^/$",
+                klass: PageStart,
+            }, {
+                url: "^/Spiel_Anmelden/$",
+                klass: SpielAnmelden,
+            }, {
+                url: "^/Top_Ten/$",
+                klass: TopTen,
+            }, {
+                url: "/Wer_spielt_was/$",
+                klass: WerSpieltWas,
+            }, {
+                url: ".*",
+                klass: PageNotFound,
+            }];
 
             let app = new App("GamesUP", pages);
             app.run();
@@ -69,20 +68,22 @@
 
 
 <body>
+
     <!-- Kopfbereich der App -->
     <header>
-        <div class="logo">
-            <a href="#/">
-                <src="Logo/Logo.png" alt="Logo">
-            </a>
-            <video src="Logo/GamesUp.mp4" type="Logo/GamesUp/mp4" controls width="800" hight="800" id="_video" autoplay=true style="margin-left: 650px;">
-                Ihr Browser kann dieses Video nicht wiedergeben.
-            </video>
-        </div>
+        
+
+
+
 
         <nav>
+
             <!-- Top Navigation Menu -->
             <div class="topnav">
+                <a href="#/"><img src="Logo/Logo.png" align="top" alt="Logo"  align="top" hight=400px width=200px></a>
+                <video src="Logo/GamesUp.mp4" type="Logo/GamesUp/mp4" controls align="centered" width="500" hight="500" id="_video" autoplay=true style="float: right;">
+                    Ihr Browser kann dieses Video nicht wiedergeben.
+                </video>
                 <a href="#/" class="active"></a>
                 <!-- Navigation links (hidden by default) -->
                 <div id="myLinks">
@@ -111,5 +112,11 @@
 
     </main>
 </body>
+<footer>
+    <p>©Copyright 2019 Lena Paul, Pascal Hartmann, Fabian Fischer und Noah Colby</p>
+    <p>Alle Bilder und Marken bleiben Eigentum ihrer Urheber.</p>
+    <p>Kontakt: noah.colby@yahoo.de</p>
+    <p>Stand: 17. November 2019  </p>
+</footer>
 
 </html>

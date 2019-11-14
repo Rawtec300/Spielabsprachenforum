@@ -25,7 +25,7 @@ html {
 
     /* https://pixabay.com/photos/ship-boat-lake-sailing-boat-italy-952292/ */
     background-color: black;
-    background-image: url("abstract-1175050.jpg");
+    background-image: url("hintergrundBlack.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -60,7 +60,6 @@ body {
     display: none !important;
 }
 
-
 /*
  * KOPFBEREICH
  */
@@ -69,10 +68,12 @@ body {
 header {
     --text-color: white;
     --icon-color: rgb(0, 90, 115);
+
 }
 header nav {
-    padding: var(--content-padding);
+
     color: var(--text-color);
+    border: 1px solid gainsboro;
 }
 
 header nav i {
@@ -83,12 +84,10 @@ header nav .page-name {
     font-weight: bold;
 }
 
-header nav .logo {
-    display: none;
-}
+
 
 /* Link-Farben */
-header nav a,
+
 header nav a:visited {
     color: var(--text-color);
     text-decoration: none;
@@ -99,7 +98,6 @@ header nav a:hover {
     color: var(--icon-color);
 }
 
-header nav a i,
 header nav a:visited i {
     color: var(--icon-color);
 }
@@ -110,11 +108,12 @@ header nav a:hover i {
 
 /* Kopfinhalt der Seite */
 header .content {
-    padding: var(--content-padding);
 
-    background: white;
+    padding-top: 0px;
+    padding-bottom: 15px;
+
+    background: grey;
     border: 0px solid lightgrey;
-    border-bottom-width: 1px;
     box-shadow: 1px 1px 2px rgba(0,0,0, 0.9);
 }
 
@@ -128,13 +127,15 @@ header .content h6 {
 }
 
 header .content h1 {
-    color: rgb(37, 88, 148);
+    color: black;
     text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
-    font-size: 150%;
+    font-size: 120%;
+    text-align: center;
 }
 
 header .content h2 {
-    font-size: 110%;
+    font-size: 90%;
+    text-align: center;
 }
 
 header .content h3,
@@ -164,7 +165,6 @@ header .content h6 {
 
     .logo {
         display: inline-block !important;
-
         height: 2em;
         height: 8em;
 
@@ -175,6 +175,7 @@ header .content h6 {
  * HAUPTBEREICH
  */
 main {
+
     padding: var(--content-padding);
     background: rgba(240,240,240, 0.6);
 
@@ -248,4 +249,12 @@ main a:hover {
 
 .hamburger-active .hamburger-icon:before {
   transform: rotate(90deg)
+}
+
+/*Footer Information*/
+footer{
+    color: white;
+    font-size: 70%;
+    line-height: 50%;
+    text-align: center;
 }
