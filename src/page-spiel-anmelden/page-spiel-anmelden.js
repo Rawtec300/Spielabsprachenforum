@@ -28,10 +28,11 @@ class SpielAnmelden {
     this._app.setPageHeader(pageDom.querySelector("header"));
     this._app.setPageContent(pageDom.querySelector("main"));
   }
+
   funktion addDate() {
     let datenbank = this._app.database;
     let buttonAddDate = document.getElementById("Absenden");
-    
+
     var gameName = document.getElementById("Spiel");
     var plattformName = document.getElementById("Konsole");
     var userName = document.getElementById("Username");
