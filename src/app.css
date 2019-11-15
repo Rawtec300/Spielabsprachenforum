@@ -1,9 +1,5 @@
 /**
  * Stylesheet zur Klasse App: Hauptstylesheet der Anwendung.
- *
- * Hier sollten nur allgemeine Sachen stehen, die das Layout als Ganzes
- * betreffen. Also solche Dinge wie Schriftart und Größe, Farben sowie das
- * Layout im Allgemeinen betreffend.
  */
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
@@ -60,20 +56,18 @@ body {
     display: none !important;
 }
 
-/*
- * KOPFBEREICH
- */
+
 
 /* Allgemeine Darstellung der Menüzeile */
 header {
     --text-color: white;
     --icon-color: rgb(0, 90, 115);
-
 }
-header nav {
 
+header nav {
+    padding-left: 1em;
     color: var(--text-color);
-    border: 1px solid gainsboro;
+
 }
 
 header nav i {
@@ -83,8 +77,6 @@ header nav i {
 header nav .page-name {
     font-weight: bold;
 }
-
-
 
 /* Link-Farben */
 
@@ -104,45 +96,6 @@ header nav a:visited i {
 
 header nav a:hover i {
     color: var(--text-color);
-}
-
-/* Kopfinhalt der Seite */
-header .content {
-
-    padding-top: 0px;
-    padding-bottom: 15px;
-
-    background: grey;
-    border: 0px solid lightgrey;
-    box-shadow: 1px 1px 2px rgba(0,0,0, 0.9);
-}
-
-header .content h1,
-header .content h2,
-header .content h3,
-header .content h4,
-header .content h5,
-header .content h6 {
-    margin: 0;
-}
-
-header .content h1 {
-    color: black;
-    text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
-    font-size: 120%;
-    text-align: center;
-}
-
-header .content h2 {
-    font-size: 90%;
-    text-align: center;
-}
-
-header .content h3,
-header .content h4,
-header .content h5,
-header .content h6 {
-    font-size: 110%;
 }
 
 /* Anpassung an große Bildschirme */
@@ -165,92 +118,17 @@ header .content h6 {
 
     .logo {
         display: inline-block !important;
-        height: 2em;
+        height: 20em;
         height: 8em;
-
     }
 }
-
-/*
- * HAUPTBEREICH
- */
+/*HAUPTBEREICH*/
 main {
 
     padding: var(--content-padding);
     background: rgba(240,240,240, 0.6);
-
     flex: 1;
 }
-
-main a,
-main a:visited {
-    color: crimson;
-    text-decoration: underline;
-    transition: color 0.25s;
-}
-
-main a:hover {
-    color: red;
-}
-
-/*
-* Style Vorgaben für das Hamburger Menü
-*/
-
-.hamburger-icon-container {
-  color:red;
-  height: 1.7em;
-  width: 1.7em;
-  position: relative;
-  cursor: pointer;
-  background: currentColor;
-  border:10px solid currentColor;
-  border-radius: 3px;
-}
-
-.hamburger-icon,
-.hamburger-icon:before,
-.hamburger-icon:after {
-  content: '';
-  position: absolute;
-  height: 3px;
-  width: 1.7em;
-  background: white;
-  transition: all .2s ease;
-}
-
-.hamburger-icon {
-  top: 0.75em
-}
-
-.hamburger-icon:before {
-  top: -0.55em
-}
-
-.hamburger-icon:after {
-  top: 0.55em
-}
-
-/* Darstellung wenn das Close-Icon angezeigt werden soll */
-
-.hamburger-active .hamburger-icon-container {
-  color:lime;
-}
-
-.hamburger-active .hamburger-icon {
-  background: transparent;
-  transform: rotate(-135deg)
-}
-
-.hamburger-active .hamburger-icon:before,
-.hamburger-active .hamburger-icon:after {
-  top: 0
-}
-
-.hamburger-active .hamburger-icon:before {
-  transform: rotate(90deg)
-}
-
 /*Footer Information*/
 footer{
     color: white;

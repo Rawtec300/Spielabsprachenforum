@@ -6,6 +6,6 @@ Eine Webseite wo sich Leute nach für ausgewählte Spiele einschreiben können. 
 
 Die Webseite besteht aus:
     -Startseite, welche die eine Auswahl der ausgewählten Spiele bietet
-    -Top10-Seite, welche unsere Top10 angezeigt
-    -Anmelde Seite, welche dazu dient, dass sich die Spieler für das gewünschte Spiel anmelden können
-    -werspieltwas-Seite, diese zeigt die Spiele welche sich ebenfals zu einem bestimten Datum und Uhrzeit für ein Spiel angemeldet haben
+    -Top10, welche unsere Top10 anzeigt
+    -Anmelde-Option, welche dazu dient, dass sich die Spieler für das gewünschte Spiel anzumelden
+    -Werspieltwas-Option, diese zeigt die Spieler welche sich ebenfals zu einem bestimten Datum und Uhrzeit für ein Spiel angemeldet haben
