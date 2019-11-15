@@ -15,6 +15,7 @@ class PageStart {
     async show(matches) {
       await this._app.database.createGamesData();
       await this._app.database.createPlattformsData();
+      await this._app.database.createDatesDemo();
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-start/page-start.html");
         let css = await fetch("page-start/page-start.css");

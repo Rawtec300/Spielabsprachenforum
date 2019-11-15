@@ -5,11 +5,10 @@
 
 <!-- Hauptbereich -->
 <main>
-
     <form action="#/Wer_spielt_was/">
         <div>
             <label> Konsole:
-                <select name="Konsole">
+                <select name="Konsole" id="plattformName">
                     <option>PC</option>
                     <option>PS4</option>
                     <option>xBox</option>
@@ -19,19 +18,19 @@
         </div><br>
         <div>
             Spiel:<br>
-            <input type="text" name="Spiel">
+            <input type="text" name="Spiel" id="gameNameFeld">
         </div>
         <div>
             Username:<br>
-            <input type="text" name="Username">
+            <input type="text" name="Username" id="userNameFeld">
         </div>
         <div>
             Am:<br>
-            <input type="date" name="Date">
+            <input type="date" name="Date" id="datumFeld">
         </div>
         <div>
             Um:<br>
-            <input type="time" name="Uhrzeit">
+            <input type="time" name="Uhrzeit" id="timeFeld">
         </div><br>
         <div>
             <form action="#/" method="get">

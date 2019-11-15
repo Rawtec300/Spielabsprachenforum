@@ -27,24 +27,37 @@ class SpielAnmelden {
     this._app.setPageCss(css);
     this._app.setPageHeader(pageDom.querySelector("header"));
     this._app.setPageContent(pageDom.querySelector("main"));
+    let buttonAddDate = document.getElementById("frm1_submit");
+    buttonAddDate.addEventListener("click", this.addDate.bind(this));
+
   }
-
-    addDate() {
+  uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+  addDate(Event) {
     let datenbank = this._app.database;
-    let buttonAddDate = document.getElementById("Absenden");
 
-    var gameName = document.getElementById("Spiel");
-    var plattformName = document.getElementById("Konsole");
-    var userName = document.getElementById("Username");
-    var datum = document.getElementById("Date");
-    var urzeit = document.getElementById("Uhrzeit");
+    var gameName = document.getElementById("gameNameFeld");
+    var plattformName = document.getElementById("plattformNameFeld");
+    var userName = document.getElementById("userNameFeld");
+    var datum = document.getElementById("datumFeld");
+    var urzeit = document.getElementById("timeFeld");
 
     datenbank.saveItems("dates", [{
-        "plattform": plattformName,
-        "game": gameName,
-        "name": userName,
-        "day": datum,
-        "time": urzeit,
-      }]);
-    }
+      "id": uuidv4,
+      "plattform": plattformName.value,
+      "game": gameName.value,
+      "name": userName.value,
+      "day": datum.value,
+      "time": urzeit.value,
+    }]);
+    Event.stopPropagation();
+    Event.preventDefault();
   }
+
+
+}
