@@ -67,11 +67,14 @@ header {
 header nav {
     padding-left: 1em;
     color: var(--text-color);
+    padding-top: 1em;
+    padding-right: 2em;
 
 }
 
 header nav i {
     color: var(--icon-color);
+
 }
 
 header nav .page-name {
