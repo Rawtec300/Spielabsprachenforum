@@ -29,7 +29,7 @@ class SpielAnmelden {
     this._app.setPageContent(pageDom.querySelector("main"));
   }
 
-  funktion addDate() {
+    addDate() {
     let datenbank = this._app.database;
     let buttonAddDate = document.getElementById("Absenden");
 
@@ -45,6 +45,6 @@ class SpielAnmelden {
         "name": userName,
         "day": datum,
         "time": urzeit,
-      });
+      }]);
     }
   }

@@ -13,6 +13,8 @@ class PageStart {
      * Inhalt der Seite anzeigen. Wird hierfür von der App-Klasse aufgerufen.
      */
     async show(matches) {
+      await this._app.database.createGamesData();
+      await this._app.database.createPlattformsData();
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-start/page-start.html");
         let css = await fetch("page-start/page-start.css");
