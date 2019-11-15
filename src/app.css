@@ -183,15 +183,9 @@ main {
     flex: 1;
 }
 
-main a,
-main a:visited {
-    color: crimson;
-    text-decoration: underline;
-    transition: color 0.25s;
-}
-
-main a:hover {
-    color: red;
+a, a:visited{
+     color: white;
+     text-decoration: none;
 }
 
 /*Footer Information*/
