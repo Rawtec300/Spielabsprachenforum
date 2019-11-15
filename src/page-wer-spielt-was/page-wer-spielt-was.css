@@ -1,4 +1,6 @@
-main h1 {
+
+header h1{
+padding-top: 1em;
     text-align: center;
-    font-size: 80%;
+   line-height: 0em;;
 }

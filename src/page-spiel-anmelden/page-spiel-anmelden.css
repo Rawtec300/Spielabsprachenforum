@@ -1,6 +1,15 @@
 /**
  * Stylesheet zur Klasse Page-spiel-anmelden: Anmeldeseite von den einzelnen Spielen der App
  */
+ header h1{
+padding-top: 1em;
+     text-align: center;
+    line-height: 0em;;
+ }
+
+
+
+
 label{
     color: black;
     text-align: center;
