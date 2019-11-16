@@ -56,6 +56,7 @@ class SpielAnmelden {
       "time": urzeit.value,
     }]);
     Event.preventDefault();
+    window.location.hash="#/Wer_spielt_was/";
   }
 
 
