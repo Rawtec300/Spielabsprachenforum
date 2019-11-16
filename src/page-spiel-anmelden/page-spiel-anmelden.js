@@ -48,14 +48,13 @@ class SpielAnmelden {
     var urzeit = document.getElementById("timeFeld");
 
     datenbank.saveItems("dates", [{
-      "id": uuidv4,
+      "id": this.uuidv4(),
       "plattform": plattformName.value,
       "game": gameName.value,
       "name": userName.value,
       "day": datum.value,
       "time": urzeit.value,
     }]);
-    Event.stopPropagation();
     Event.preventDefault();
   }
 
