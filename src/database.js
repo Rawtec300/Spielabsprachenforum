@@ -38,6 +38,14 @@ class Database {
     this._dates = this._db.collection("dates");
   }
 
+  uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
   async createGamesData() {
     let games = await this.selectAllItems("games");
 
@@ -173,19 +181,19 @@ class Database {
 
     if (dates.length < 1) {
       this.saveItems("dates", [{
-        "id": "1",
+        "id": this.uuidv4(),
         "plattform": "PS4",
-        "game": "Test",
-        "name": "Testuser",
-        "day": "17.11.2019",
+        "game": "GTA 5",
+        "name": "xXKingSlayerXx",
+        "day": "2019-11-21",
         "time": "12:30",
       }, {
-        "id": "2",
+        "id": this.uuidv4(),
         "plattform": "PC",
-        "game": "Test2",
-        "name": "Testuser2",
-        "day": "18.11.2019",
-        "time": "14:00",
+        "game": "Battlefield 5",
+        "name": "Kovarex",
+        "day": "2019-11-18",
+        "time": "18:00",
       }]);
     }
   }

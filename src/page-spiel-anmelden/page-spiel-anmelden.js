@@ -29,8 +29,8 @@ class SpielAnmelden {
     this._app.setPageContent(pageDom.querySelector("main"));
     let buttonAddDate = document.getElementById("frm1_submit");
     buttonAddDate.addEventListener("click", this.addDate.bind(this));
-
   }
+
   uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
       var r = Math.random() * 16 | 0,
@@ -38,6 +38,7 @@ class SpielAnmelden {
       return v.toString(16);
     });
   }
+
   addDate(Event) {
     let datenbank = this._app.database;
 
@@ -56,7 +57,7 @@ class SpielAnmelden {
       "time": urzeit.value,
     }]);
     Event.preventDefault();
-    window.location.hash="#/Wer_spielt_was/";
+    window.location.hash = "#/Wer_spielt_was/";
   }
 
 
