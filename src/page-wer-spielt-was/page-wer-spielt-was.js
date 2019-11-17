@@ -28,7 +28,12 @@ class WerSpieltWas {
     this._app.setPageCss(css);
     this._app.setPageHeader(pageDom.querySelector("header"));
     this._app.setPageContent(pageDom.querySelector("main"));
+
+    var today = new Date();//Datum von heute abspeichern
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();//Formatangabe des Datums
+
     let table = new Tabulator("#data-table", {
+
       layout: "fitColumns",
       columns:[
             // Datenspalten
@@ -39,6 +44,8 @@ class WerSpieltWas {
             {title: "Uhrzeit",  field: "time"},
       ],
     });
+    table.setFilter([ {field: "day", type: "=", value: date} ]);//(heute.getFullYear()+heute.getMonth()+heute.Date());// Nach Datum größer gleich heute filtern (zukünftige Spiele)
+
     let database = this._app.database;
     let dates = await database.selectAllItems("dates");
     table.replaceData(dates);
