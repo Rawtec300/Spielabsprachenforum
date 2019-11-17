@@ -18,7 +18,7 @@
         </div><br>
         <div>
             <label> Spiel:
-                <select name="Spiel" id="gameNameFeld">
+                <select name="Spiel" id="gameNameFeld" required>
                     <option>ApexLegends</option>
                     <option>ARC</option>
                     <option>AC Odessey</option>
@@ -48,19 +48,19 @@
         </div>
         <div>
             Username:<br>
-            <input type="text" name="Username" id="userNameFeld">
+            <input type="text" name="Username" id="userNameFeld" required/>
         </div>
         <div>
             Am:<br>
-            <input type="date" name="Date" id="datumFeld">
+            <input type="date" name="Date" id="datumFeld" required/>
         </div>
         <div>
             Um:<br>
-            <input type="time" name="Uhrzeit" id="timeFeld">
+            <input type="time" name="Uhrzeit" id="timeFeld" required/>
         </div><br>
         <div>
             <form action="#/" method="get">
-                <input type="submit" value="Absenden" name="Submit" id="frm1_submit" />
+                <input type="submit" value="Absenden" name="Submit" id="frm1_submit" required/>
             </form>
         </div>
     </form>
