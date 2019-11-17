@@ -46,6 +46,10 @@ class Database {
     });
   }
 
+   /**
+    * Diese Funktion ist für den aktuellen Stand nicht notwendig.
+    * Allerdings ist sie für zukünftige Features relevant.
+    */
   async createGamesData() {
     let games = await this.selectAllItems("games");
 
@@ -159,6 +163,10 @@ class Database {
     }
   }
 
+  /**
+   * Diese Funktion ist für den aktuellen Stand nicht notwendig.
+   * Allerdings ist sie für zukünftige Features relevant.
+   */
   async createPlattformsData() {
     let plattforms = await this.selectAllItems("plattforms");
 
