@@ -8,7 +8,8 @@
     <form action="#/Wer_spielt_was/">
         <div>
             <label> Konsole:
-                <select name="Konsole" id="plattformNameFeld">
+                <select name="Konsole" id="plattformNameFeld" default="">
+                    <option value="" selected disabled hidden>Wähle deine Plattform aus </option>
                     <option>PC</option>
                     <option>PS4</option>
                     <option>xBox</option>
@@ -18,7 +19,8 @@
         </div><br>
         <div>
             <label> Spiel:
-                <select name="Spiel" id="gameNameFeld" required>
+                <select name="Spiel" id="gameNameFeld" default="">
+                    <option value="" selected disabled hidden>Wähle dein spiel aus </option>
                     <option>ApexLegends</option>
                     <option>ARC</option>
                     <option>AC Odessey</option>
@@ -48,19 +50,19 @@
         </div>
         <div>
             Username:<br>
-            <input type="text" name="Username" id="userNameFeld" required/>
+            <input type="text" name="Username" id="userNameFeld"/>
         </div>
         <div>
             Am:<br>
-            <input type="date" name="Date" id="datumFeld" required/>
+            <input type="date" name="Date" id="datumFeld"/>
         </div>
         <div>
             Um:<br>
-            <input type="time" name="Uhrzeit" id="timeFeld" required/>
+            <input type="time" name="Uhrzeit" id="timeFeld"/>
         </div><br>
         <div>
             <form action="#/" method="get">
-                <input type="submit" value="Absenden" name="Submit" id="frm1_submit" required/>
+                <input type="submit" value="Absenden" name="Submit" id="frm1_submit"/>
             </form>
         </div>
     </form>

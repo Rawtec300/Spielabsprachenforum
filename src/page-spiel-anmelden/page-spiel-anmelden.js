@@ -46,19 +46,21 @@ class SpielAnmelden {
     var plattformName = document.getElementById("plattformNameFeld");
     var userName = document.getElementById("userNameFeld");
     var datum = document.getElementById("datumFeld");
-    var urzeit = document.getElementById("timeFeld");
-
-    datenbank.saveItems("dates", [{
-      "id": this.uuidv4(),
-      "plattform": plattformName.value,
-      "game": gameName.value,
-      "name": userName.value,
-      "day": datum.value,
-      "time": urzeit.value,
-    }]);
+    var uhrzeit = document.getElementById("timeFeld");
+    if (gameName.value == "" || plattformName.value == "" || userName.value == "" || datum.value == "" || uhrzeit.value == "") {
+      alert("Bitte alle Felder ausfüllen!");
+    } else {
+      datenbank.saveItems("dates", [{
+        "id": this.uuidv4(),
+        "plattform": plattformName.value,
+        "game": gameName.value,
+        "name": userName.value,
+        "day": datum.value,
+        "time": uhrzeit.value,
+      }]);
+      alert("Dein Eintrag wurde gespeichert.");
+      window.location.hash = "#/Wer_spielt_was/";
+    }
     Event.preventDefault();
-    window.location.hash = "#/Wer_spielt_was/";
   }
-
-
 }
